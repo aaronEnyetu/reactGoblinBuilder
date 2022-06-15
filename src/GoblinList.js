@@ -11,3 +11,5 @@ export default function GoblinList({ goblins, handleDeleteGoblin }) {
     </div>
   );
 }
+
+
