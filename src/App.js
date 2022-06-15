@@ -30,10 +30,11 @@ function App() {
   const [goblinFormColor, setGoblinFormColor] = useState('lightgreen');
 
   const [filterString, setFilterString] = useState('');
+  
 
 
 //useEffect(()) to watch for all goblins to change and when it does, call handleFilterGoblins
-  useEffect(() => handleFilterGoblins(filterString), [filterString, handleFilterGoblins]);
+  useEffect(() => setAllVisibleGoblins(filterString), [filterString]);
   
   function submitGoblin(e) {
     e.preventDefault();
