@@ -29,11 +29,11 @@ function App() {
 //goblinFormColor, this is how the user input is tracked for the current color of the goblin in the form
   const [goblinFormColor, setGoblinFormColor] = useState('lightgreen');
 
-  const [filterQuery, setFilterQuery] = useState('');
+  const [filterString, setFilterString] = useState('');
 
 
 //useEffect(()) to watch for all goblins to change and when it does, call handleFilterGoblins
-  useEffect(() => handleFilterGoblins(filterQuery), [filterQuery]);
+  useEffect(() => handleFilterGoblins(filterString), [filterString]);
   
   function submitGoblin(e) {
     e.preventDefault();
@@ -96,7 +96,7 @@ function App() {
       <div className='goblin-filter quarter'>
         Filter Goblins
         {/* note that handleFilterGoblins is defined upstairs. This is where the allGoblins array gets filtered */}
-        <input onChange={(e) => setFilterQuery(e.target.value)} />
+        <input onChange={(e) => setFilterString(e.target.value)} />
       </div>
       <GoblinForm 
         /*
@@ -120,7 +120,7 @@ function App() {
         setGoblinFormHP={setGoblinFormHP}
       />
       <GoblinList 
-        goblins={filterQuery ? visibleGoblins : allGoblins} // this takes in an array of goblins. If the filteredGoblins has a length, use that array. Otherwise, use the allGoblins array 
+        goblins={filterString ? visibleGoblins : allGoblins} // this takes in an array of goblins. If the filteredGoblins has a length, use that array. Otherwise, use the allGoblins array 
         handleDeleteGoblin={handleDeleteGoblin} // note that the goblin list has access to the ability to delete
       />
     </div>
