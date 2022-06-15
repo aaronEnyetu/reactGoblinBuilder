@@ -18,7 +18,7 @@ function App() {
   const [allGoblins, setAllGoblins] = useState([]);
 
 //filteredGoblins, a second array of goblins- this array is the filtereed version of the above allGoblins array
-  const [filteredGoblins, setAllFilteredGoblins] = useState('');
+  const [visibleGoblins, setAllVisibleGoblins] = useState('');
 
 //goblinFormName, this is how the user input is tracked for the current name of the goblin in the form
   const [goblinFormName, setGoblinFormName] = useState('');
@@ -66,7 +66,7 @@ function App() {
 
     // update the allGoblins array immutably to this new, smaller array
     //setAllGoblins([...allGoblins]);
-    setAllFilteredGoblins([...allGoblins]);
+    setAllVisibleGoblins([...allGoblins]);
   }
 
   function handleFilterGoblins(search) {
@@ -76,7 +76,7 @@ function App() {
     // if there is a search argument, set the visible goblins to the filtered goblins
     // if the search argument is undefined, set the visible goblins in state to just be the array of all goblins
 
-    search ? setAllFilteredGoblins(searchGoblins) : setAllFilteredGoblins(allGoblins);
+    search ? setAllVisibleGoblins(searchGoblins) : setAllVisibleGoblins(allGoblins);
   }
 
 
@@ -120,7 +120,7 @@ function App() {
         setGoblinFormHP={setGoblinFormHP}
       />
       <GoblinList 
-        goblins={filterQuery ? filteredGoblins : allGoblins} // this takes in an array of goblins. If the filteredGoblins has a length, use that array. Otherwise, use the allGoblins array 
+        goblins={filterQuery ? visibleGoblins : allGoblins} // this takes in an array of goblins. If the filteredGoblins has a length, use that array. Otherwise, use the allGoblins array 
         handleDeleteGoblin={handleDeleteGoblin} // note that the goblin list has access to the ability to delete
       />
     </div>
