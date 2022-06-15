@@ -34,7 +34,7 @@ function App() {
 
 
 //useEffect(()) to watch for all goblins to change and when it does, call handleFilterGoblins
-  useEffect(() => setAllVisibleGoblins(filterString), [filterString]);
+  useEffect(() => handleFilterGoblins(filterString));
   
   function submitGoblin(e) {
     e.preventDefault();
