@@ -27,7 +27,7 @@ function App() {
   const [goblinFormHP, setGoblinFormHP] = useState('');
 
 //goblinFormColor, this is how the user input is tracked for the current color of the goblin in the form
-  const [goblinFormColor, setGoblinFormColor] = useState('grey');
+  const [goblinFormColor, setGoblinFormColor] = useState('lightgreen');
 
   const [filterQuery, setFilterQuery] = useState('');
 
@@ -54,7 +54,7 @@ function App() {
 
     setGoblinFormName('');
     setGoblinFormHP('');
-    setGoblinFormColor('grey');
+    setGoblinFormColor('lightgreen');
   }
 
   function handleDeleteGoblin(name) {
