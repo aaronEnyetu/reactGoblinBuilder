@@ -33,7 +33,7 @@ function App() {
 
 
 //useEffect(()) to watch for all goblins to change and when it does, call handleFilterGoblins
-  useEffect(() => handleFilterGoblins(filterString), [filterString]);
+  useEffect(() => handleFilterGoblins(filterString), [filterString, handleFilterGoblins]);
   
   function submitGoblin(e) {
     e.preventDefault();
